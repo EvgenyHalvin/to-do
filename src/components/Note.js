@@ -43,7 +43,7 @@ class Note extends React.Component {
             <p className="table__text table__text_type_age">{`  ${
               this.state.editInfo.age
                 ? this.state.editInfo.age
-                : `Возраст не указан`
+                : `—`
             }`}</p>
             <p className="table__text table__text_type_email">{`  ${
               this.state.editInfo.email

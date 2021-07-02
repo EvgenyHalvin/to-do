@@ -39,7 +39,8 @@ export default class NewNote extends React.Component {
     e.preventDefault();
     const { name, age, email, phone } = this.state;
     const newData = { name, age, email, phone };
-    return this.props.handleNewNote(newData)
+    this.setState({ name: "", age: "", email: "", phone: "" });
+    return this.props.handleNewNote(newData);
   }
 
   render() {
@@ -52,6 +53,7 @@ export default class NewNote extends React.Component {
           placeholder="Имя"
           id="input"
           required
+          value={this.state.name}
           onChange={this.addNewName}
         />
         <input
@@ -61,6 +63,7 @@ export default class NewNote extends React.Component {
           placeholder="Возраст"
           id="input"
           required
+          value={this.state.age}
           onChange={this.addNewAge}
         />
         <input
@@ -70,6 +73,7 @@ export default class NewNote extends React.Component {
           placeholder="E-mail"
           id="input"
           required
+          value={this.state.email}
           onChange={this.addNewEmail}
         />
         <input
@@ -79,6 +83,7 @@ export default class NewNote extends React.Component {
           placeholder="Номер телефона"
           id="input"
           required
+          value={this.state.phone}
           onChange={this.addNewPhone}
         />
         <button
