@@ -1,0 +1,12 @@
+.table__item {
+    list-style-type: none;
+    border-radius: 2px;
+    padding: 5px 0 5px;
+    font-size: 14px;
+    line-height: 30px;
+    min-height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    flex-direction: row;
+}

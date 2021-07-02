@@ -1,0 +1,9 @@
+.table__title {
+    margin: 10px auto;
+    
+    font-family: 'Inter', Arial, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 32px;
+	line-height: 17px;
+}

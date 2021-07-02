@@ -1,0 +1,8 @@
+.editBtn_disabled {
+    filter: opacity(.2);
+    cursor: default;
+}
+
+.editBtn_disabled:hover {
+    box-shadow: none;
+}

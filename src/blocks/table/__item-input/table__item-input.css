@@ -1,0 +1,17 @@
+.table__item-input {
+    width: 689px;
+    min-height: 31px;
+    margin: 0;
+    font-size: 24px;
+    line-height: 31px;
+    padding-left: 10px;
+    border: 0;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+    padding: 0 0 0 10px;
+    outline: none;
+    background-color: #fff;
+}
+
+.table__item-input:hover{
+    background-color: rgba(240, 240, 240, 0.3);
+}

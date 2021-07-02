@@ -1,0 +1,36 @@
+@import url(../vendor/normalize.css);
+@import url(../fonts/fonts.css);
+
+ /* Стили для таблицы и ее элементов */
+@import url(../blocks/table/table.css);
+@import url(../blocks/table/__title/table__title.css);
+@import url(../blocks/table/__add-area/table__add-area.css);
+@import url(../blocks/table/__input/table__input.css);
+@import url(../blocks/table/__form/table__form.css);
+@import url(../blocks/table/__list/table__list.css);
+@import url(../blocks/table/__item/table__item.css);
+@import url(../blocks/table/__btns-area/table__btns-area.css);
+@import url(../blocks/table/__text/table__text.css);
+@import url(../blocks/table/__item-input/table__item-input.css);
+@import url(../blocks/table/__text/_type/table__text_type_age.css);
+@import url(../blocks/table/__text/_type/table__text_type_email.css);
+@import url(../blocks/table/__text/_type/table__text_type_name.css);
+@import url(../blocks/table/__text/_type/table__text_type_phone.css);
+@import url(../blocks/table/__column-names/table__column-names.css);
+@import url(../blocks/table/__column-name/table__column-name.css);
+@import url(../blocks/table/__column-name/_type/table__column-name_type_age.css);
+@import url(../blocks/table/__column-name/_type/table__column-name_type_email.css);
+@import url(../blocks/table/__column-name/_type/table__column-name_type_name.css);
+@import url(../blocks/table/__column-name/_type/table__column-name_type_phone.css);
+
+
+/* Стили для кнопок */
+@import url(../blocks/submit-btn/submit-btn.css);
+@import url(../blocks/submit-btn/_disabled/submit-btn_disabled.css);
+@import url(../blocks/removeBtn/removeBtn.css);
+@import url(../blocks/editBtn/editBtn.css);
+@import url(../blocks/saveBtn/saveBtn.css);
+@import url(../blocks/add-icon/add-icon.css);
+@import url(../blocks/add-icon/_active/add-icon_active.css);
+@import url(../blocks/add-icon/_disabled/add-icon_disabled.css);
+@import url(../blocks/editBtn/editBtn_disabled.css);

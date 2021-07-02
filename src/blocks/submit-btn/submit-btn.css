@@ -1,0 +1,28 @@
+.submit-btn {
+	height: 36px;
+	width: 84px;
+	margin: 0;
+	border-radius: 2px;
+	border: 1px;
+	background-color: #000;
+	font-family: 'Inter', Arial, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 22px;
+	text-align: center;
+	color: #fff;
+	cursor: pointer;
+	-webkit-transition: 0.2s;
+	-o-transition: 0.2s;
+	transition: 0.2s;
+	margin-left: 15px;
+	padding: 0;
+}
+
+.submit-btn:hover,
+.submit-btn:active,
+.submit-btn:focus {
+	background-color: rgb(0, 0, 0, 0.8);
+	color: #fff;
+}

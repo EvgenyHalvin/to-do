@@ -1,0 +1,18 @@
+.editBtn {
+    background-color: white;
+    border-radius: 2px;
+    margin: 0;
+    padding: 0;
+    background-image: url(../../images/edit.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.editBtn:hover {
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+}

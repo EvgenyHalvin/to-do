@@ -1,0 +1,4 @@
+.add-icon_disabled {
+    background-image: url(../../../images/add-disabled.png);
+    filter: opacity(.5)
+}

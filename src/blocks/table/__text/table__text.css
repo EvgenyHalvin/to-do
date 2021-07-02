@@ -1,0 +1,17 @@
+.table__text {
+    background-color: rgba(240, 240, 240, 0.5);
+    border-radius: 2px;
+    min-height: 32px;
+    margin: 0;
+    margin-right: 7px;
+    font-size: 14px;
+    line-height: 32px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.table__text:last-of-type {
+    margin-right: 0;
+}
