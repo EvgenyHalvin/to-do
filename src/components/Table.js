@@ -25,7 +25,8 @@ function Table() {
   }
 
   function removeNote(index) {
-    setNotes(notes.filter((_, k) => k !== index));
+    notes.filter((_,i) => i !== index)
+    console.log(index);
   }
 
   return (

@@ -5,13 +5,17 @@ class Note extends React.Component {
     super(props);
 
     this.id = props.id;
-    this.removeNote = props.handleDeleteNote;
     this.infoNote = props.dataNote.data;
+    this.deleteCard = this.deleteCard.bind(this);
 
     this.state = {
       isEdit: false,
       editInfo: this.infoNote,
     };
+  }
+
+  deleteCard() {
+    this.props.handleDeleteNote();
   }
 
   onCardClickEdit = () => {
@@ -60,7 +64,7 @@ class Note extends React.Component {
                 className={this.state.isEdit ? `saveBtn` : `editBtn`}
                 onClick={this.onCardClickEdit}
               ></button>
-              <button className="removeBtn" onClick={this.removeNote}></button>
+              <button className="removeBtn" onClick={this.deleteCard}></button>
             </div>
           </>
         ) : (
