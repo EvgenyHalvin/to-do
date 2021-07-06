@@ -11,6 +11,5 @@
 Приложение адаптировано под десктопные и мобильные разрешения устрйоств.
 
 **Ссылка на сайт**
-```html
+
 <a href="https://evgenyhalvin.github.io/To-do-app-CRUD-React.js/" target="_blank">To-do app (CRUD)</a>
-```
