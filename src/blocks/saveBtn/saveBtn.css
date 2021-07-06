@@ -1,7 +1,7 @@
 .saveBtn {
     background-color: white;
     border-radius: 2px;
-    margin: 0 0 0 10px;
+    margin: 0;
     padding: 0;
     background-image: url(../../images/save.png);
     background-size: contain;

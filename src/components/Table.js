@@ -1,59 +1,24 @@
 import React from "react";
 import Note from "./Note";
-import { api } from "../utils/api.js";
 import NewNote from "./NewNote";
 
-function Table() {
-  const [notes, setNotes] = React.useState([]);
-
-  React.useEffect(() => {
-    api
-      .getRecords()
-      .then((recordsData) => {
-        setNotes(recordsData);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
-  function addNewNote(newData){
-    const newRecord = {
-      data: newData,
-    };
-    setNotes([...notes, newRecord]);
-  }
-
-  function removeNote(index) {
-    notes.filter((_,i) => i !== index)
-    console.log(index);
-  }
+function Table(props) {
+  const { notes, onAddNewNote, onDeleteNote, onEditNote } = props;
 
   return (
     <div className="table">
       <h1 className="table__title">Таблица CRUD</h1>
       <div className="table__add-area">
-        <NewNote handleNewNote={addNewNote} />
-      </div>
-      <div className="table__column-names">
-        <p className="table__column-name table__column-name_type_name">Имя</p>
-        <p className="table__column-name table__column-name_type_age">
-          Возраст
-        </p>
-        <p className="table__column-name table__column-name_type_email">
-          E-mail
-        </p>
-        <p className="table__column-name table__column-name_type_phone">
-          Номер телефона
-        </p>
+        <NewNote handleNewNote={onAddNewNote} />
       </div>
       <div className="table__list">
         {notes.map((note, i) => (
           <Note
-            key={i}
+            key={note._id}
             id={i}
             dataNote={note}
-            handleDeleteNote={() => removeNote(i)}
+            handleDeleteNote={onDeleteNote}
+            handleEditNote={onEditNote}
           />
         ))}
       </div>

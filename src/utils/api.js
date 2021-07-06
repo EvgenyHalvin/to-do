@@ -19,18 +19,28 @@ class Api {
     }).then(this._checkResponse);
   }
 
-  // putRecords(dataNote) {
-  //   return fetch(`${this._baseUrl}/api/records`, {
-  //     method: "PUT",
-  //     headers: this._headers,
-  //     data: JSON.stringify({
-  //       name: dataNote.name,
-  //       age: dataNote.age,
-  //       email: dataNote.email,
-  //       phone: dataNote.phone,
-  //     }),
-  //   }).then(this._checkResponse);
-  // }
+  putRecords(data) {
+    return fetch(`${this._baseUrl}/api/records`, {
+      method: "PUT",
+      headers: this._headers,
+      body: JSON.stringify(data),
+    }).then(this._checkResponse);
+  }
+
+  deleteRecord(id) {
+    return fetch(`${this._baseUrl}/api/records/${id}`, {
+      method: "DELETE",
+      headers: this._headers,
+    }).then(this._checkResponse);
+  }
+
+  editRecord(id, data) {
+    return fetch(`${this._baseUrl}/api/records/${id}`, {
+      method: "POST",
+      headers: this._headers,
+      body: JSON.stringify({data})
+    }).then(this._checkResponse);
+  }
 }
 
 export const api = new Api(configApi);

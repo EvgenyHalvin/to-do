@@ -51,7 +51,6 @@ export default class NewNote extends React.Component {
           type="text"
           name="name"
           placeholder="Имя"
-          id="input"
           required
           value={this.state.name}
           onChange={this.addNewName}
@@ -61,7 +60,6 @@ export default class NewNote extends React.Component {
           type="number"
           name="age"
           placeholder="Возраст"
-          id="input"
           required
           value={this.state.age}
           onChange={this.addNewAge}
@@ -71,7 +69,6 @@ export default class NewNote extends React.Component {
           type="email"
           name="email"
           placeholder="E-mail"
-          id="input"
           required
           value={this.state.email}
           onChange={this.addNewEmail}
@@ -81,7 +78,6 @@ export default class NewNote extends React.Component {
           type="number"
           name="phone"
           placeholder="Номер телефона"
-          id="input"
           required
           value={this.state.phone}
           onChange={this.addNewPhone}
