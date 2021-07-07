@@ -4,6 +4,7 @@ import Table from "./Table";
 
 function App() {
   const [notes, setNotes] = React.useState([]);
+  const [success, setSuccess] = React.useState(false);
 
   // Рендер записей с сервера
   React.useEffect(() => {
@@ -49,7 +50,7 @@ function App() {
       api
         .editRecord(note._id, note.data)
         .then(() => {
-          
+          setSuccess(true);
         })
         .catch((err) => {
           console.log(err);
@@ -75,6 +76,7 @@ function App() {
   return (
     <Table
       notes={notes}
+      isLoaded={success}
       onAddNewNote={addNewNote}
       onDeleteNote={removeNote}
       onEditNote={editNote}

@@ -3,7 +3,7 @@ import Note from "./Note";
 import NewNote from "./NewNote";
 
 function Table(props) {
-  const { notes, onAddNewNote, onDeleteNote, onEditNote } = props;
+  const { notes, isLoaded, onAddNewNote, onDeleteNote, onEditNote } = props;
 
   return (
     <div className="table">
@@ -19,6 +19,7 @@ function Table(props) {
             dataNote={note}
             handleDeleteNote={onDeleteNote}
             handleEditNote={onEditNote}
+            isLoaded={isLoaded}
           />
         ))}
       </div>
