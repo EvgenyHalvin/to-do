@@ -11,4 +11,4 @@
 
 
 **Ссылка на сайт :** 
-<a href="https://evgenyhalvin.github.io/To-do-app-CRUD-React.js/" target="_blank">To-do app (CRUD)</a>
+<a href="https://evgenyhalvin.github.io/To-do-App/" target="_blank">To-do app (CRUD)</a>

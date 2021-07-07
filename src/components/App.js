@@ -57,20 +57,20 @@ function App() {
   }
 
   // Индикатор загрузки
-  function renderLoading(isLoading, formSelector) {
-    const currentForm = document.querySelector(formSelector)
-    const currentTextButton = currentForm.querySelector('.popup__submit-button');
+  // function renderLoading(isLoading, formSelector) {
+  //   const currentForm = document.querySelector(formSelector)
+  //   const currentTextButton = currentForm.querySelector('.popup__submit-button');
   
-    if (isLoading) {
-      currentTextButton.textContent = 'Сохранение...';
-      currentTextButton.setAttribute('disabled', true);
-      currentTextButton.style.backgroundColor = '#787373'
-    } else {
-      currentTextButton.textContent = 'Сохранить';
-      currentTextButton.removeAttribute('disabled', true);
-      currentTextButton.style.backgroundColor = '#000'
-    }
-  }
+  //   if (isLoading) {
+  //     currentTextButton.textContent = 'Сохранение...';
+  //     currentTextButton.setAttribute('disabled', true);
+  //     currentTextButton.style.backgroundColor = '#787373'
+  //   } else {
+  //     currentTextButton.textContent = 'Сохранить';
+  //     currentTextButton.removeAttribute('disabled', true);
+  //     currentTextButton.style.backgroundColor = '#000'
+  //   }
+  // }
 
   return (
     <Table
