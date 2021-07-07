@@ -48,10 +48,28 @@ function App() {
   function editNote(note) {
       api
         .editRecord(note._id, note.data)
-        .then(() => {})
+        .then(() => {
+          
+        })
         .catch((err) => {
           console.log(err);
         });
+  }
+
+  // Индикатор загрузки
+  function renderLoading(isLoading, formSelector) {
+    const currentForm = document.querySelector(formSelector)
+    const currentTextButton = currentForm.querySelector('.popup__submit-button');
+  
+    if (isLoading) {
+      currentTextButton.textContent = 'Сохранение...';
+      currentTextButton.setAttribute('disabled', true);
+      currentTextButton.style.backgroundColor = '#787373'
+    } else {
+      currentTextButton.textContent = 'Сохранить';
+      currentTextButton.removeAttribute('disabled', true);
+      currentTextButton.style.backgroundColor = '#000'
+    }
   }
 
   return (
