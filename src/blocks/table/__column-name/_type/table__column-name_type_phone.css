@@ -1,3 +1,9 @@
 .table__column-name_type_phone {
     width: 150px;
 }
+
+@media (max-width: 900px) {
+    .table__column-name_type_phone {
+        width: 230px;
+    }
+}

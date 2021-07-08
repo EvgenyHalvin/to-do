@@ -4,22 +4,7 @@
     outline: none;
     border: 1px solid #C4C4C4;
     box-sizing: border-box;
-    border-radius: 2px;
     cursor: default;
-    margin: 0;
-    width: 84px;
-    font-family: 'Inter', Arial, sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 22px;
-    text-align: center;
-    -webkit-transition: 0.2s;
-    -o-transition: 0.2s;
-    transition: 0.2s;
-    margin-left: 15px;
-    padding: 0;
-    height: 36px;
 }
 
 .submit-btn_disabled:hover, .submit-btn_disabled:active, .submit-btn_disabled:focus {

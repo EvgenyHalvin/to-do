@@ -26,3 +26,11 @@
 	background-color: rgb(0, 0, 0, 0.8);
 	color: #fff;
 }
+
+@media (max-width: 900px) {
+	.submit-btn {
+		width: 230px;
+		margin-left: 0;
+		margin-top: 15px;
+	}
+}

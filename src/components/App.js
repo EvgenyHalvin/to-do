@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { api } from "../utils/api";
 import Table from "./Table";
 
 function App() {
-  const [notes, setNotes] = React.useState([]);
-  const [success, setSuccess] = React.useState(false);
+  const [notes, setNotes] = useState([]);
+  const [isLoad, setIsLoad] = useState(false);
 
   // Рендер записей с сервера
   React.useEffect(() => {
@@ -20,9 +20,12 @@ function App() {
 
   // Добавление записи в таблицу
   function addNewNote(newData) {
+    setIsLoad(true);
+
     const newRecord = {
       data: newData,
     };
+
     api
       .putRecords(newRecord)
       .then((res) => {
@@ -30,6 +33,9 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        setIsLoad(false);
       });
   }
 
@@ -42,44 +48,15 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
-      });
+      })
   }
-
-  // Редактирование записи
-  function editNote(note) {
-      api
-        .editRecord(note._id, note.data)
-        .then(() => {
-          setSuccess(true);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-  }
-
-  // Индикатор загрузки
-  // function renderLoading(isLoading, formSelector) {
-  //   const currentForm = document.querySelector(formSelector)
-  //   const currentTextButton = currentForm.querySelector('.popup__submit-button');
-  
-  //   if (isLoading) {
-  //     currentTextButton.textContent = 'Сохранение...';
-  //     currentTextButton.setAttribute('disabled', true);
-  //     currentTextButton.style.backgroundColor = '#787373'
-  //   } else {
-  //     currentTextButton.textContent = 'Сохранить';
-  //     currentTextButton.removeAttribute('disabled', true);
-  //     currentTextButton.style.backgroundColor = '#000'
-  //   }
-  // }
 
   return (
     <Table
       notes={notes}
-      isLoaded={success}
       onAddNewNote={addNewNote}
       onDeleteNote={removeNote}
-      onEditNote={editNote}
+      isLoad={isLoad}
     />
   );
 }

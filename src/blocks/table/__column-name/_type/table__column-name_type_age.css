@@ -1,3 +1,9 @@
 .table__column-name_type_age {
     width: 80px;
 }
+
+@media (max-width: 900px) {
+    .table__column-name_type_age {
+        width: 230px;
+    }
+}

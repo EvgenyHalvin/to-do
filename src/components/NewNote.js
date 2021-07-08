@@ -54,6 +54,7 @@ export default class NewNote extends React.Component {
           required
           value={this.state.name}
           onChange={this.addNewName}
+          autoFocus
         />
         <input
           className="table__input table__column-name_type_age"
@@ -86,16 +87,20 @@ export default class NewNote extends React.Component {
           type="submit"
           onClick={this.submitNote}
           className={
-            this.state.name.length <= 1 ? `submit-btn_disabled` : btnClass
+            this.state.name.length <= 1 ? `${btnClass} submit-btn_disabled` : btnClass
           }
-          disabled={this.state.name.length <= 1}
+          disabled={(this.state.name.length <= 1) || this.props.isLoad}
         >
           <div
-            className={`add-icon ${
-              this.state.name.length <= 1
-                ? `add-icon_disabled`
-                : `add-icon_active`
-            }`}
+            className={
+              this.props.isLoad
+                ? `spinner spinner_small`
+                : `add-icon ${
+                    this.state.name.length <= 1
+                      ? `add-icon_disabled`
+                      : `add-icon_active`
+                  }`
+            }
           />
         </button>
       </form>
