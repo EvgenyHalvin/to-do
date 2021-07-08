@@ -7,8 +7,9 @@ function NoteTextArea({
   note,
   onCardClickEdit,
   handleChange,
-  deleteCard,
-  editNote
+  deleteNote,
+  editNote,
+  isDeleted,
 }) {
   return (
     <div className="table__item" id={dataNote._id}>
@@ -57,7 +58,7 @@ function NoteTextArea({
               onClick={isEdit ? editNote : onCardClickEdit}
               disabled={isLoaded}
             ></button>
-            <button className="removeBtn" onClick={deleteCard}></button>
+            <button className="removeBtn" onClick={deleteNote}></button>
           </div>
         </>
       ) : dataNote.data ? (
@@ -79,7 +80,10 @@ function NoteTextArea({
               className={isEdit ? `saveBtn` : `editBtn`}
               onClick={onCardClickEdit}
             ></button>
-            <button className="removeBtn" onClick={deleteCard}></button>
+            <button
+              className={isDeleted ? `spinner spinner_deleted` : `removeBtn`}
+              onClick={deleteNote}
+            ></button>
           </div>
         </>
       ) : (
@@ -96,7 +100,10 @@ function NoteTextArea({
           </div>
           <div className="table__btns-area">
             <button className="editBtn editBtn_disabled"></button>
-            <button className="removeBtn" onClick={deleteCard}></button>
+            <button
+              className={isDeleted ? `spinner spinner_deleted` : `removeBtn`}
+              onClick={deleteNote}
+            ></button>
           </div>
         </>
       )}

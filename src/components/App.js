@@ -39,25 +39,13 @@ function App() {
       });
   }
 
-  // Удаление записи из таблицы
-  function removeNote(note) {
-    api
-      .deleteRecord(note._id)
-      .then(() => {
-        setNotes(notes.filter((n) => n._id !== note._id));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-
   return (
-      <Table
-        notes={notes}
-        onAddNewNote={addNewNote}
-        onDeleteNote={removeNote}
-        isLoad={isLoad}
-      />
+    <Table
+      notes={notes}
+      setNotes={setNotes}
+      onAddNewNote={addNewNote}
+      isLoad={isLoad}
+    />
   );
 }
 

@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { api } from "../utils/api";
 import NoteTextArea from "./NoteTextArea";
 
-function Note({ dataNote, handleDeleteNote, setGlobalId }) {
+function Note({ dataNote, notes, setNotes }) {
   const [isEdit, setIsEdit] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isDeleted, setIsDeleted] = useState(false);
   const [note, setNote] = useState({
     name: dataNote.data.name,
     age: dataNote.data.age,
@@ -14,7 +15,6 @@ function Note({ dataNote, handleDeleteNote, setGlobalId }) {
 
   function onCardClickEdit() {
     setIsEdit(true);
-    setGlobalId(dataNote._id)
   }
 
   function handleChange(e) {
@@ -23,10 +23,6 @@ function Note({ dataNote, handleDeleteNote, setGlobalId }) {
       ...note,
       [name]: value,
     }));
-  }
-
-  function deleteCard() {
-    return handleDeleteNote(dataNote);
   }
 
   // Редактирование записи
@@ -46,6 +42,23 @@ function Note({ dataNote, handleDeleteNote, setGlobalId }) {
       });
   }
 
+  // Удаление записи из таблицы
+  function removeNote() {
+    setIsDeleted(true);
+
+    api
+      .deleteRecord(dataNote._id)
+      .then(() => {
+        setNotes(notes.filter((n) => n._id !== dataNote._id));
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        setIsDeleted(false);
+      });
+  }
+
   return (
     <NoteTextArea
       dataNote={dataNote}
@@ -54,9 +67,9 @@ function Note({ dataNote, handleDeleteNote, setGlobalId }) {
       note={note}
       onCardClickEdit={onCardClickEdit}
       handleChange={handleChange}
-      deleteCard={deleteCard}
+      deleteNote={removeNote}
       editNote={editNote}
-      setGlobalId={setGlobalId}
+      isDeleted={isDeleted}
     />
   );
 }
