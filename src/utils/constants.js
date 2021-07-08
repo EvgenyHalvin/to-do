@@ -4,5 +4,3 @@ export const configApi = {
       'Content-Type': 'application/json'
     }
   };
-
-  export const btnClass = `submit-btn`;

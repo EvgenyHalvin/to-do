@@ -44,7 +44,7 @@ function NoteTextArea({
           />
           <input
             className="table__input table__column-name_type_phone"
-            type="number"
+            type="tel"
             name="phone"
             placeholder="Номер телефона"
             required
