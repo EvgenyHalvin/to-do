@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import Note from "./Note";
 import NewNote from "./NewNote";
 
 function Table({ notes, onAddNewNote, onDeleteNote, isLoad }) {
+  const [globalId, setGlobalId] = useState(null);
+
+  function cancelEdit() {
+    console.log("ok")
+  }
+
   return (
-    <div className="table">
+    <div
+      className="table"
+      onClick={(e) => {
+        if (globalId) {
+          if (globalId !== e.target.closest(".table__item")?.id) {
+            cancelEdit();
+            setGlobalId(null);
+          }
+        }
+      }}
+    >
       <h1 className="table__title">Таблица CRUD</h1>
       <div className="table__add-area">
         <NewNote handleNewNote={onAddNewNote} isLoad={isLoad} />
@@ -15,6 +31,7 @@ function Table({ notes, onAddNewNote, onDeleteNote, isLoad }) {
             key={note._id}
             dataNote={note}
             handleDeleteNote={onDeleteNote}
+            setGlobalId={setGlobalId}
           />
         ))}
       </div>

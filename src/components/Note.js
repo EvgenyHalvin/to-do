@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { api } from "../utils/api";
 import NoteTextArea from "./NoteTextArea";
 
-function Note({ dataNote, handleDeleteNote }) {
+function Note({ dataNote, handleDeleteNote, setGlobalId }) {
   const [isEdit, setIsEdit] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [note, setNote] = useState({
@@ -13,7 +13,8 @@ function Note({ dataNote, handleDeleteNote }) {
   });
 
   function onCardClickEdit() {
-    setIsEdit(!isEdit);
+    setIsEdit(true);
+    setGlobalId(dataNote._id)
   }
 
   function handleChange(e) {
@@ -35,7 +36,7 @@ function Note({ dataNote, handleDeleteNote }) {
     api
       .editRecord(dataNote._id, note)
       .then(() => {
-        setIsEdit(!isEdit);
+        setIsEdit(false);
       })
       .catch((err) => {
         console.log(err);
@@ -55,6 +56,7 @@ function Note({ dataNote, handleDeleteNote }) {
       handleChange={handleChange}
       deleteCard={deleteCard}
       editNote={editNote}
+      setGlobalId={setGlobalId}
     />
   );
 }

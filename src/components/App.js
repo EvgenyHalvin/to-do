@@ -48,16 +48,16 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
-      })
+      });
   }
 
   return (
-    <Table
-      notes={notes}
-      onAddNewNote={addNewNote}
-      onDeleteNote={removeNote}
-      isLoad={isLoad}
-    />
+      <Table
+        notes={notes}
+        onAddNewNote={addNewNote}
+        onDeleteNote={removeNote}
+        isLoad={isLoad}
+      />
   );
 }
 

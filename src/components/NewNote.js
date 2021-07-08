@@ -21,6 +21,17 @@ function NewNote({ handleNewNote, isLoad }) {
     return handleNewNote(newNote);
   }
 
+  function addNote(e) {
+    submitNote(e);
+    setNewNote({
+      ...newNote,
+      name: "",
+      age: "",
+      email: "",
+      phone: "",
+    });
+  }
+
   return (
     <form name="noteform" className="table__form">
       <input
@@ -62,7 +73,7 @@ function NewNote({ handleNewNote, isLoad }) {
       />
       <button
         type="submit"
-        onClick={submitNote}
+        onClick={addNote}
         className={
           newNote.name.length <= 1
             ? `submit-btn submit-btn_disabled`

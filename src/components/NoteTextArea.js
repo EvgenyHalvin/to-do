@@ -8,10 +8,10 @@ function NoteTextArea({
   onCardClickEdit,
   handleChange,
   deleteCard,
-  editNote,
+  editNote
 }) {
   return (
-    <div className="table__item">
+    <div className="table__item" id={dataNote._id}>
       {isEdit ? (
         <>
           <input
@@ -103,5 +103,4 @@ function NoteTextArea({
     </div>
   );
 }
-
 export default NoteTextArea;
