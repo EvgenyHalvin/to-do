@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/EvgenyHalvin/to-do/static/css/main.e1a80560.chunk.css",
+    "main.js": "/EvgenyHalvin/to-do/static/js/main.95b3b251.chunk.js",
+    "main.js.map": "/EvgenyHalvin/to-do/static/js/main.95b3b251.chunk.js.map",
+    "runtime-main.js": "/EvgenyHalvin/to-do/static/js/runtime-main.5bca3446.js",
+    "runtime-main.js.map": "/EvgenyHalvin/to-do/static/js/runtime-main.5bca3446.js.map",
+    "static/js/2.b04c78c9.chunk.js": "/EvgenyHalvin/to-do/static/js/2.b04c78c9.chunk.js",
+    "static/js/2.b04c78c9.chunk.js.map": "/EvgenyHalvin/to-do/static/js/2.b04c78c9.chunk.js.map",
+    "index.html": "/EvgenyHalvin/to-do/index.html",
+    "precache-manifest.f748916b487679649ce165cd633e1501.js": "/EvgenyHalvin/to-do/precache-manifest.f748916b487679649ce165cd633e1501.js",
+    "service-worker.js": "/EvgenyHalvin/to-do/service-worker.js",
+    "static/css/main.e1a80560.chunk.css.map": "/EvgenyHalvin/to-do/static/css/main.e1a80560.chunk.css.map",
+    "static/media/index.css": "/EvgenyHalvin/to-do/static/media/save.1b7a9b98.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5bca3446.js",
+    "static/js/2.b04c78c9.chunk.js",
+    "static/css/main.e1a80560.chunk.css",
+    "static/js/main.95b3b251.chunk.js"
+  ]
+}
