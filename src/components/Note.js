@@ -53,8 +53,6 @@ function Note({ dataNote, notes, setNotes }) {
       })
       .catch((err) => {
         console.log(err);
-      })
-      .finally(() => {
         setIsDeleted(false);
       });
   }
